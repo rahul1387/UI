@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Form</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("img/blurred-abstract-background-interior-view-looking-out-toward-empty-office-lobby-entrance-doors-glass-curtain-wall-with-frame.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+        background: linear-gradient(rgba(255, 255, 255, 0.2) 3em, rgba(255, 255, 255, 0.3) 3em);
+        height: 3em;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 1px solid white;
+        outline: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="checkbox"] {
+        margin-top: 5px;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    button:hover
+    {
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    }
+    .treatment-rec {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .patient-info {}
+
+    .treat-div {
+        display: flex;
+    }
+
+    .child-div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5%;
+    }
+    div h2::before
+    {
+        content: '';
+        width: 70px;
+        height: 2px;
+        position:absolute;
+        background-color: #e91e1e;
+        top: 5.5em;
+        /* bottom: -10px; */
+    }
+</style>
+
+
+<body>
+    <h1>Appoinment Details</h1>
+    <form id="data-entry-form">
+        <!-- Treatment Record Information -->
+        <div class="treatment-rec">
+            <h2>Treatment Record</h2>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="treatment-record-id">Treatment Record ID:</label>
+                    <input type="text" id="treatment-record-id" name="treatment-record-id" required><br>
+                </div>
+                <div class="child-div">
+                    <label for="patient-id">Patient ID:</label>
+                    <input type="text" id="patient-id" name="patient-id" required><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="doctor-id">Doctor ID:</label>
+                    <input type="text" id="doctor-id" name="doctor-id" required><br>
+                </div>
+                <div class="child-div">
+                    <label for="department-id">Department ID:</label>
+                    <input type="text" id="department-id" name="department-id" required><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="hospital-id">Hospital ID:</label>
+                    <input type="text" id="hospital-id" name="hospital-id" disabled style="cursor: not-allowed;"><br>
+                </div>
+                <div class="child-div">
+                    <label for="admitted">Admitted:</label>
+                    <input type="checkbox" id="admitted" name="admitted"><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="admission-start-date">Admission Start Date:</label>
+                    <input type="datetime-local" id="admission-start-date" name="admission-start-date"><br>
+                </div>
+                <div class="child-div">
+                    <label for="admission-end-date">Admission End Date:</label>
+                    <input type="datetime-local" id="admission-end-date" name="admission-end-date"><br>
+                </div>
+            </div>
+            <div class="treat-div">
+
+                <div class="child-div">
+                    <label for="patient-blood-pressure">Patient Blood Pressure:</label>
+                    <input type="text" id="patient-blood-pressure" name="patient-blood-pressure"><br>
+                </div>
+                <div class="child-div">
+                    <label for="patient-weight">Patient Weight:</label>
+                    <input type="text" id="patient-weight" name="patient-weight"><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="next-appointment-date">Next Appointment Date:</label>
+                    <input type="datetime-local" id="next-appointment-date" name="next-appointment-date"><br>
+                </div>
+                <div class="child-div">
+                    <label for="treatment-info">Treatment Info:</label>
+                    <textarea id="treatment-info" name="treatment-info"></textarea><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age"><br>
+                </div>
+                <div class="child-div">
+                    <label for="is-active">Is Active:</label>
+                    <input type="checkbox" id="is-active" name="is-active" checked><br>
+                </div>
+            </div>
+            <div class="treat-div">
+                <div class="child-div">
+                    <label for="prescription">Prescription:</label>
+                    <textarea id="prescription" name="prescription"></textarea><br>
+                </div>
+                <div class="child-div">
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount"><br>
+                </div>
+            </div>
+        </div>
+        <!-- Patient Information -->
+        <div class="patient-info">
+
+            <h2>Patient Information</h2>
+            <label for="patient-name">Name:</label>
+            <input type="text" id="patient-name" name="patient-name" required><br>
+
+            <label for="patient-surname">Surname:</label>
+            <input type="text" id="patient-surname" name="patient-surname"><br>
+
+            <label for="patient-phone">Phone Number:</label>
+            <input type="tel" id="patient-phone" name="patient-phone" required><br>
+
+            <label for="patient-address">Address:</label>
+            <textarea id="patient-address" name="patient-address" required></textarea><br>
+
+            <label for="patient-pincode">Pincode:</label>
+            <input type="number" id="patient-pincode" name="patient-pincode" required><br>
+
+            <label for="patient-state">State:</label>
+            <input type="text" id="patient-state" name="patient-state" required><br>
+
+            <label for="patient-password">Password:</label>
+            <input type="password" id="patient-password" name="patient-password" required><br>
+
+            <label for="patient-email">Email:</label>
+            <input type="email" id="patient-email" name="patient-email" required><br>
+
+            <label for="patient-gender">Gender:</label>
+            <select id="patient-gender" name="patient-gender">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+            </select><br>
+        </div>
+        <!-- Hospital Information -->
+        <div class="hospital-info">
+
+            <h2>Hospital Information</h2>
+            <label for="hospital-name">Hospital Name:</label>
+            <input type="text" id="hospital-name" name="hospital-name" required><br>
+
+            <!-- Other Hospital Fields... -->
+
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
