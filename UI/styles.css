@@ -100,3 +100,8 @@
         font-family: 'Poppins', sans-serif;
         opacity: 0.9;
     }
+    .content{
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+    }
